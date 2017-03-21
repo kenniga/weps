@@ -1,0 +1,2 @@
+echo '{ "presets": ["react"] }' > .babelrc
+echo '{ "presets": ["es2015"] }' > .babelrc

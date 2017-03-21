@@ -1,0 +1,23 @@
+.main.carousel {
+  height: 300px;
+  margin-bottom: 2em;
+  .carousel-item {
+    width: 400px;
+  }
+}
+
+.preview.web__preview {
+  position: relative;
+}
+
+.preview.web__preview-laptop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.preview.web__preview-clip {
+  position: absolute;
+  top: 1.4em;
+  left: 14%;
+  display: block;
+}

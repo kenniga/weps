@@ -1,0 +1,21 @@
+.subtitle {
+  font-weight: 300;
+  margin-top: 1em;
+}
+.btn-flat {
+  &.border-blue {
+    border: 1px solid #2196F3 !important;
+  }
+  &.border-orange {
+    border: 1px solid #ffb74d !important;
+  }
+}
+.heading {
+  &.heading__bold {
+    font-weight: 500;
+  }
+  &.heading__thin {
+    font-weight: 300;
+  }
+
+}
