@@ -14,15 +14,17 @@ var PATHS = {
   scripts: [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/jquery-slimscroll/jquery.slimscroll.js',
-    'node_modules/materialize-css/dist/js/materialize.js'
+    'node_modules/materialize-css/dist/js/materialize.js',
+    'node_modules/fullpage.js/dist/jquery.fullpage.js'
   ]
 };
 
 gulp.task('styles', function () {
 
-  // var gridSassStream = gulp.src(['src/libs/simple-grid/grid/simple-grid.scss'])
-  //       .pipe(concat('simple-grid-custom.css'))
-  //       .pipe(sass());
+  var cssExtension = gulp.src([
+          'node_modules/fullpage.js/dist/jquery.fullpage.css',
+        ])
+        .pipe(concat('extensions.css'));
 
   var materializeSassStream = gulp.src(['node_modules/materialize-css/sass/materialize.scss'])
         .pipe(concat('materialize.css'))
@@ -32,8 +34,8 @@ gulp.task('styles', function () {
         .pipe(concat('custom.css'))
         .pipe(sass());
 
-  var mergedStream = merge(materializeSassStream, customSassStream)
-        .pipe(order(['materialize-custom.css', 'custom.css']))
+  var mergedStream = merge(materializeSassStream, customSassStream, cssExtension)
+        .pipe(order(['materialize-custom.css', 'custom.css', 'extensions.css']))
         .pipe(concat('style.css'))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
